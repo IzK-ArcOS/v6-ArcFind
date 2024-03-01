@@ -20,7 +20,7 @@
   <span class="material-icons-round">search</span>
   <input
     type="text"
-    placeholder="Search ArcOS"
+    placeholder="Search settings, files and apps"
     bind:value={$Query}
     bind:this={input}
     on:keydown={(e) => runtime.MutateIndex(e)}
