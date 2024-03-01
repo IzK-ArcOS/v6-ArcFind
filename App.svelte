@@ -1,9 +1,34 @@
 <script lang="ts">
-  import { App } from "$types/app";
+  import { onMount } from "svelte";
   import "./css/main.css";
+  import { Runtime } from "./ts/runtime";
+  import { sleep } from "$ts/util";
+  import Result from "./Components/Result.svelte";
+  export let runtime: Runtime;
 
-  export let app: App;
+  const { Query, Results } = runtime;
+
+  let input: HTMLInputElement;
+
+  onMount(async () => {
+    await sleep(100);
+    input.focus();
+  });
 </script>
 
-<h1>Hello, World!</h1>
-<p>Working! App {app.metadata.name}, version {app.metadata.version}.</p>
+<div class="search-bar">
+  <span class="material-icons-round">search</span>
+  <input
+    type="text"
+    placeholder="Search ArcOS"
+    bind:value={$Query}
+    bind:this={input}
+    on:keydown={(e) => runtime.MutateIndex(e)}
+  />
+</div>
+
+<div class="results" class:show={$Results.length}>
+  {#each $Results as result, index}
+    <Result {result} {runtime} {index} />
+  {/each}
+</div>

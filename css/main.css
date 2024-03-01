@@ -1,3 +1,20 @@
-window#appTemplate { /* Rename appTemplate to the ID of the app */
-  color: #f0f;
+@import url("./results.css");
+@import url("./field.css");
+
+#ArcFind {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#ArcFind > div.body {
+  background-color: transparent;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#ArcFind::before {
+  display: none;
 }

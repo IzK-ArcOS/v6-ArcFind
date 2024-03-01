@@ -1,0 +1,47 @@
+#ArcFind > div.body div.results {
+  background-color: var(--win-bg);
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: var(--win-border);
+  overflow-y: scroll;
+  max-height: calc(100% - 70px);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+#ArcFind > div.body div.results.show {
+  transform: unset;
+}
+
+#ArcFind > div.body div.results button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  background-color: transparent;
+}
+
+#ArcFind > div.body div.results button:hover,
+#ArcFind > div.body div.results button.selected {
+  background-color: var(--accent-transparent);
+}
+
+#ArcFind > div.body div.results button p {
+  margin: 0;
+}
+
+#ArcFind > div.body div.results button p.caption {
+  font-weight: bold;
+}
+
+#ArcFind > div.body div.results button p.description {
+  opacity: 0.5;
+}
+
+#ArcFind > div.body div.results button img {
+  height: 32px;
+}

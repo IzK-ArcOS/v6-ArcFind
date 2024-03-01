@@ -2,32 +2,37 @@ import { DefaultIcon } from "$ts/images/apps";
 import { Runtime } from "./runtime";
 import AppSvelte from "../App.svelte";
 import { App } from "$types/app";
+import { ArcFindIcon } from "$ts/images/general";
 
-export const app: App = {
+export const ArcFind: App = {
   metadata: {
-    name: "App Template",
-    description: "This is an app template",
+    name: "ArcFind",
+    description: "Search through ArcOS",
     author: "The ArcOS Team",
-    version: "0.0.0",
-    icon: DefaultIcon
+    version: "2.0.0",
+    icon: ArcFindIcon,
+    hidden: true,
+    appGroup: "internal",
   },
   runtime: Runtime,
   content: AppSvelte,
-  id: "appTemplate",
-  size: { w: 0, h: 0 },
-  minSize: { w: 0, h: 0 },
-  maxSize: { w: 0, h: 0 },
+  id: "ArcFind",
+  size: { w: 600, h: 500 },
+  minSize: { w: 600, h: 500 },
+  maxSize: { w: 600, h: 500 },
   pos: { x: 0, y: 0 },
   state: {
     minimized: false,
     maximized: false,
-    headless: false,
+    headless: true,
     fullscreen: false,
-    resizable: false
+    resizable: false,
   },
   controls: {
     minimize: false,
     maximize: false,
-    close: false
-  }
-}
+    close: false,
+  },
+  singleInstance: true,
+  isOverlay: true,
+};

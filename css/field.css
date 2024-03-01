@@ -1,0 +1,22 @@
+#ArcFind div.search-bar {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 10px;
+  height: 60px;
+  border: var(--win-border);
+  padding: 0 15px;
+}
+
+#ArcFind div.search-bar input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-shadow: none;
+}
