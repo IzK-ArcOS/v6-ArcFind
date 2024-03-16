@@ -3,6 +3,7 @@ import { Runtime } from "./runtime";
 import AppSvelte from "../App.svelte";
 import { App } from "$types/app";
 import { ArcFindIcon } from "$ts/images/general";
+import { SafeMode } from "$state/Desktop/ts/store";
 
 export const ArcFind: App = {
   metadata: {
@@ -35,4 +36,5 @@ export const ArcFind: App = {
   },
   singleInstance: true,
   isOverlay: true,
+  loadCondition: () => !SafeMode.get(),
 };
