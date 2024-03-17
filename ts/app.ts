@@ -14,6 +14,7 @@ export const ArcFind: App = {
     icon: ArcFindIcon,
     hidden: true,
     appGroup: "internal",
+    dependendsOn: ["ArcShell"],
   },
   runtime: Runtime,
   content: AppSvelte,
