@@ -1,9 +1,9 @@
 <script lang="ts">
+  import { sleep } from "$ts/util";
   import { onMount } from "svelte";
+  import Result from "./Components/Result.svelte";
   import "./css/main.css";
   import { Runtime } from "./ts/runtime";
-  import { sleep } from "$ts/util";
-  import Result from "./Components/Result.svelte";
   export let runtime: Runtime;
 
   const { Query, Results } = runtime;

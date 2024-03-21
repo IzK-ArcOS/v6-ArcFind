@@ -1,9 +1,8 @@
-import { DefaultIcon } from "$ts/images/apps";
-import { Runtime } from "./runtime";
-import AppSvelte from "../App.svelte";
-import { App } from "$types/app";
-import { ArcFindIcon } from "$ts/images/general";
 import { SafeMode } from "$state/Desktop/ts/store";
+import { ArcFindIcon } from "$ts/images/general";
+import { App } from "$types/app";
+import AppSvelte from "../App.svelte";
+import { Runtime } from "./runtime";
 
 export const ArcFind: App = {
   metadata: {
