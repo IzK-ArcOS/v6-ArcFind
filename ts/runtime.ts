@@ -17,6 +17,7 @@ export class Runtime extends AppRuntime {
     super(app, mutator, process);
 
     process.accelerator.store.push({
+      // Set the Escape keyboard shortcut to close the app
       key: "escape",
       action() {
         process.handler.kill(process.pid, true);
@@ -27,22 +28,26 @@ export class Runtime extends AppRuntime {
   }
 
   private async _init() {
+    // Write all files in the user's filesystem to the tree
     this.Tree.set(await GetFilesystemTree());
 
+    // Search if the user's input changes
     this.Query.subscribe(async (v) => {
       const results = await Search(v);
 
+      // Write the results to a writable for Svelte to use
       this.Results.set(results.map((r) => r.item));
     });
   }
 
+  // Triggers the action of the specified result
   public async Trigger(result: SearchItem) {
     await result.action(result);
 
     this.closeApp();
   }
 
-  public async Submit() {
+  public Submit() {
     const results = this.Results.get();
     const index = this.SelectionIndex.get();
 
@@ -50,6 +55,7 @@ export class Runtime extends AppRuntime {
 
     this.Query.set("");
 
+    // Trigger the selected search result
     this.Trigger(results[index == -1 ? 0 : index]);
   }
 
