@@ -19,9 +19,9 @@ export const ArcFind: App = {
   runtime: Runtime,
   content: AppSvelte,
   id: "ArcFind",
-  size: { w: 600, h: 500 },
-  minSize: { w: 600, h: 500 },
-  maxSize: { w: 600, h: 500 },
+  size: { w: 600, h: 485 },
+  minSize: { w: 600, h: 485 },
+  maxSize: { w: 600, h: 485 },
   pos: { x: 0, y: 0 },
   state: {
     minimized: false,

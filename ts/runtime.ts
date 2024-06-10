@@ -35,6 +35,8 @@ export class Runtime extends AppRuntime {
     this.Query.subscribe(async (v) => {
       const results = await Search(v);
 
+      if (results.length > 7) results.length = 7;
+
       // Write the results to a writable for Svelte to use
       this.Results.set(results.map((r) => r.item));
     });
