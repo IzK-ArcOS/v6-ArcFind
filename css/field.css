@@ -10,7 +10,7 @@
   width: 100%;
   background-color: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
-  border-radius: 10px;
+  border-radius: var(--win-border-rad);
   height: 60px;
   border: var(--win-border);
   padding: 0 15px;

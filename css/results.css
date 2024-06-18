@@ -2,7 +2,7 @@
   background-color: var(--win-bg);
   flex-grow: 1;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: var(--win-border-rad);
   border: var(--win-border);
   overflow-y: scroll;
   max-height: calc(100% - 70px);
